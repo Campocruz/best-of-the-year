@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.lesson.java.best_of_the_year.classes.movie;
 import org.lesson.java.best_of_the_year.classes.song;
@@ -34,12 +35,32 @@ public class HomeController {
     return "moviePage";
   }
 
+  @GetMapping("/movie/{id}")
+  public String movieDetail(@PathVariable("id") String id, Model model) {
+
+    int index = Integer.parseInt(id);
+    ArrayList<movie> movieList = getBestMovie();
+    model.addAttribute("movie", movieList.get(index));
+
+    return "movieDetail";
+  }
+
   @GetMapping("/song")
   public String song(Model model) {
 
     model.addAttribute("songList", getBestSong());
 
     return "songPage";
+  }
+
+  @GetMapping("/song/{id}")
+  public String songDetail(@PathVariable("id") String id, Model model) {
+
+    int index = Integer.parseInt(id);
+    ArrayList<song> songList = getBestSong();
+    model.addAttribute("song", songList.get(index));
+
+    return "songDetail";
   }
 
   // BUISNESS LOGIC
