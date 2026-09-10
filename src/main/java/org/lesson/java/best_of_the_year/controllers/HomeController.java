@@ -27,17 +27,17 @@ public class HomeController {
   }
 
   @GetMapping("/movie")
-  public String movie() {
+  public String movie(Model model) {
 
-    getBestMovie();
+    model.addAttribute("movieList", getBestMovie());
 
     return "moviePage";
   }
 
   @GetMapping("/song")
-  public String song() {
+  public String song(Model model) {
 
-    getBestSong();
+    model.addAttribute("songList", getBestSong());
 
     return "songPage";
   }
@@ -51,20 +51,16 @@ public class HomeController {
     bestMovie.add(new movie(2, "Il Padrino", "Non lo so"));
     bestMovie.add(new movie(3, "Pulp Fiction", "Non lo so"));
 
-    System.out.println(bestMovie);
-
     return bestMovie;
   }
 
-  private List<song> getBestSong() {
+  private ArrayList<song> getBestSong() {
 
     ArrayList<song> bestSong = new ArrayList<>();
 
     bestSong.add(new song(1, "Like a Rolling Stone", "Bob Dylan"));
     bestSong.add(new song(2, "Bohemian Rhapsody", "Queen"));
     bestSong.add(new song(3, "Smells Like Teen Spirit", "Nirvana"));
-
-    System.out.print(bestSong);
 
     return bestSong;
   }

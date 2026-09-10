@@ -41,6 +41,19 @@
   </nav>
 
 
+
+  <th:block th:fragment="songListGroup(songList)">
+    <ul class="list-group" th:each=" song : ${songList}">
+      <li class="list-group-item" th:text="|N° ${song.id} ${song.title} - ${song.artist}|" />
+    </ul>
+  </th:block>
+
+  <th:block th:fragment="movieListGroup(movieList)">
+    <ul class="list-group" th:each="movie : ${movieList}">
+      <li class="list-group-item" th:text="|N° ${movie.id} ${movie.title} - ${movie.director}|" />
+    </ul>
+  </th:block>
+
 </body>
 
 <th:block th:fragment="script">
