@@ -41,7 +41,7 @@ public class song {
 
   @Override
   public String toString() {
-    return String.format("%s, %s", this.title, this.artist);
+    return String.format("%s - %s", this.title, this.artist);
   }
 
 }
