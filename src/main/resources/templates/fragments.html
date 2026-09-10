@@ -44,13 +44,18 @@
 
   <th:block th:fragment="songListGroup(songList)">
     <ul class="list-group" th:each=" song : ${songList}">
-      <li class="list-group-item" th:text="|N° ${song.id} ${song.title} - ${song.artist}|" />
+      <!-- <li class="list-group-item" th:text="|N° ${song.id} ${song.title} - ${song.artist}|" /> -->
+      <li class="list-group-item">
+        <a class="" th:href="|song/${song.id}|" th:text="|N° ${song.id} ${song.title} - ${song.artist}|" />
+      </li>
     </ul>
   </th:block>
 
   <th:block th:fragment="movieListGroup(movieList)">
     <ul class="list-group" th:each="movie : ${movieList}">
-      <li class="list-group-item" th:text="|N° ${movie.id} ${movie.title} - ${movie.director}|" />
+      <li class="list-group-item">
+        <a class="" th:href="|movie/${movie.id}|" th:text="|N° ${movie.id} ${movie.title} - ${movie.director}|" />
+      </li>
     </ul>
   </th:block>
 

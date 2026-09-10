@@ -1,7 +1,6 @@
 package org.lesson.java.best_of_the_year.controllers;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -68,9 +67,9 @@ public class HomeController {
 
     ArrayList<movie> bestMovie = new ArrayList<>();
 
-    bestMovie.add(new movie(1, "Titanic", "Non lo so"));
-    bestMovie.add(new movie(2, "Il Padrino", "Non lo so"));
-    bestMovie.add(new movie(3, "Pulp Fiction", "Non lo so"));
+    bestMovie.add(new movie(0, "Titanic", "Non lo so"));
+    bestMovie.add(new movie(1, "Il Padrino", "Non lo so"));
+    bestMovie.add(new movie(2, "Pulp Fiction", "Non lo so"));
 
     return bestMovie;
   }
@@ -79,9 +78,9 @@ public class HomeController {
 
     ArrayList<song> bestSong = new ArrayList<>();
 
-    bestSong.add(new song(1, "Like a Rolling Stone", "Bob Dylan"));
-    bestSong.add(new song(2, "Bohemian Rhapsody", "Queen"));
-    bestSong.add(new song(3, "Smells Like Teen Spirit", "Nirvana"));
+    bestSong.add(new song(0, "Like a Rolling Stone", "Bob Dylan"));
+    bestSong.add(new song(1, "Bohemian Rhapsody", "Queen"));
+    bestSong.add(new song(2, "Smells Like Teen Spirit", "Nirvana"));
 
     return bestSong;
   }
