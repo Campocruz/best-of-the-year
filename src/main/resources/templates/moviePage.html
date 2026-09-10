@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <div th:insert="~{ fragments :: style }" />
+  <title>Movie Page</title>
+</head>
+
+<body>
+
+  <header>
+    <div th:insert="~{ fragments :: navbar }" />
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Movie Page</h1>
+    </div>
+  </main>
+
+  <footer></footer>
+
+</body>
+
+<div th:insert="~{ fragments :: script }" />
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <div th:insert="~{ fragments :: style }" />
+  <title>Welcome Page</title>
+</head>
+
+<body>
+
+  <header>
+    <div th:insert="~{ fragments :: navbar }" />
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mt-5">
+          <h3 th:text="|Welcome ${name}|">Welcome</h3>
+          <p th:text="|Best of the years by ${name}|" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer></footer>
+
+</body>
+
+<div th:insert="~{ fragments :: script }" />
+
+</html>
